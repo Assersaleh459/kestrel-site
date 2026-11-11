@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* Brand colours. Every colour on the site comes from this block, so a client can
+   re-brand by editing these values only.
+   Contrast checked (WCAG AA): ink and muted text on page/soft >= 6:1,
+   amber on charcoal and charcoal on amber about 8:1.
+   Rule: never put amber text on the light background (it fails contrast). */
+:root {
+  color-scheme: light;
+  --dark: #1c1f24; /* charcoal: header, hero, footer */
+  --dark-soft: #2a2e35; /* image placeholders on dark */
+  --accent: #f5a623; /* amber: buttons and highlights on charcoal */
+  --accent-hover: #ffbb45;
+  --page: #faf8f4; /* off-white page background */
+  --surface: #ffffff; /* cards */
+  --soft: #f1ece3; /* alternate section background */
+  --ink: #1c1f24; /* main text */
+  --muted: #4d535c; /* secondary text */
+  --line: #e2dcd1; /* card borders */
+}
+
+@theme inline {
+  --font-sans: var(--font-plex), system-ui, sans-serif;
+  --color-dark: var(--dark);
+  --color-dark-soft: var(--dark-soft);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-soft: var(--soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+}
+
+/* Arabic letters need a little more line height to stay readable. */
+:lang(ar) {
+  line-height: 1.75;
+}
+:lang(ar) :is(h1, h2, h3) {
+  line-height: 1.4;
+}
+
+/* Keyboard focus ring: charcoal on light areas, amber on charcoal areas (both >= 3:1). */
+:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}
+.bg-dark :focus-visible {
+  outline-color: var(--accent);
+}

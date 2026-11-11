@@ -1,0 +1,268 @@
+{
+  "meta": {
+    "siteName": "Kestrel Smart Home & Security",
+    "homeTitle": "Kestrel | CCTV, Smart Home and Networking in Egypt",
+    "homeDescription": "Kestrel designs and installs CCTV, smart home, networking and sound systems for homes and businesses in Egypt. Fictional demo company.",
+    "servicesTitle": "Services",
+    "servicesDescription": "CCTV, smart home, networking and sound systems: what each Kestrel service includes. Fictional demo company.",
+    "projectsTitle": "Projects",
+    "projectsDescription": "Sample CCTV, smart home, networking and sound projects in Greater Cairo. All projects are fictional.",
+    "aboutTitle": "About us",
+    "aboutDescription": "Who Kestrel is, how we work and what happens after you contact us. Fictional demo company.",
+    "contactTitle": "Contact",
+    "contactDescription": "Ask for a free site visit for CCTV, smart home, networking or sound. Fictional demo company."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "main": "Main menu",
+    "skip": "Skip to content"
+  },
+  "language": {
+    "switchTo": "العربية",
+    "switchLabel": "اقرأ هذه الصفحة بالعربية"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Smart home and security installers",
+      "title": "See, control and protect your home from one phone",
+      "text": "We plan, install and support CCTV, smart home and network systems for homes, villas and small businesses across Greater Cairo.",
+      "primary": "Get a free site visit",
+      "secondary": "See our services"
+    },
+    "services": {
+      "title": "What we install",
+      "intro": "One team for cameras, smart devices and the network they run on.",
+      "more": "All services"
+    },
+    "why": {
+      "title": "Why customers choose Kestrel",
+      "items": [
+        {
+          "title": "Free site visit",
+          "text": "We visit, measure and give you a written quote before any work starts."
+        },
+        {
+          "title": "Clean installation",
+          "text": "Hidden cables, labelled equipment and a tidy site when we leave."
+        },
+        {
+          "title": "You stay in control",
+          "text": "We set everything up on your phone and show you how to use it."
+        },
+        {
+          "title": "Support after install",
+          "text": "One year of free support visits and a clear warranty on every job."
+        }
+      ]
+    },
+    "projects": {
+      "title": "Recent projects",
+      "intro": "A few examples of our work. All projects on this demo site are fictional.",
+      "more": "All projects"
+    },
+    "cta": {
+      "title": "Ready to make your place safer?",
+      "text": "Tell us what you need and we will call you to book a free visit.",
+      "button": "Contact us"
+    }
+  },
+  "services": {
+    "items": [
+      {
+        "id": "cctv",
+        "title": "CCTV and cameras",
+        "summary": "HD cameras inside and outside, with live view and recordings on your phone.",
+        "includes": [
+          "Site survey and camera plan",
+          "Indoor and outdoor HD cameras",
+          "Recorder with 30 days of storage",
+          "Phone app set-up and training"
+        ]
+      },
+      {
+        "id": "smart-home",
+        "title": "Smart home",
+        "summary": "Lights, AC, curtains and door locks you control by app, schedule or voice.",
+        "includes": [
+          "Smart switches and plugs",
+          "AC and curtain control",
+          "Smart door lock and video doorbell",
+          "Scenes such as 'Away' and 'Good night'"
+        ]
+      },
+      {
+        "id": "networking",
+        "title": "Networking and Wi-Fi",
+        "summary": "Strong Wi-Fi in every room and a network your cameras and devices can rely on.",
+        "includes": [
+          "Wi-Fi coverage check",
+          "Mesh or wired access points",
+          "Network cabinet and cable tidy-up",
+          "Separate guest network"
+        ]
+      },
+      {
+        "id": "sound",
+        "title": "Sound systems",
+        "summary": "Music in every room, or one-zone sound for shops, cafes and offices.",
+        "includes": [
+          "Ceiling and wall speakers",
+          "Multi-room control from your phone",
+          "Background music for businesses",
+          "Tuning after installation"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "id": "villa-new-cairo",
+        "service": "cctv",
+        "title": "Villa camera system",
+        "place": "New Cairo",
+        "summary": "12 outdoor cameras, night vision and phone alerts for a family villa."
+      },
+      {
+        "id": "apartment-zamalek",
+        "service": "smart-home",
+        "title": "Smart apartment",
+        "place": "Zamalek",
+        "summary": "Lights, AC and curtains on one app, with scenes for morning and night."
+      },
+      {
+        "id": "clinic-heliopolis",
+        "service": "networking",
+        "title": "Clinic network",
+        "place": "Heliopolis",
+        "summary": "Fast Wi-Fi for staff and patients, with a separate network for devices."
+      },
+      {
+        "id": "cafe-maadi",
+        "service": "sound",
+        "title": "Cafe sound system",
+        "place": "Maadi",
+        "summary": "Background music in three zones, controlled from the counter."
+      },
+      {
+        "id": "shop-6-october",
+        "service": "cctv",
+        "title": "Shop security",
+        "place": "6th of October",
+        "summary": "Cameras on every aisle and the cash desk, viewed from the owner's phone."
+      },
+      {
+        "id": "office-sheikh-zayed",
+        "service": "networking",
+        "title": "Small office network",
+        "place": "Sheikh Zayed",
+        "summary": "Wired desks, mesh Wi-Fi and a tidy network cabinet for 20 staff."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Smart home and security installers in Egypt.",
+    "contactTitle": "Contact",
+    "pagesTitle": "Pages",
+    "demo": "Fictional demo company. All names, projects and details are made up.",
+    "builtBy": "Website by"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "This page does not exist or has moved.",
+    "button": "Back to home"
+  },
+  "servicesPage": {
+    "title": "Our services",
+    "intro": "Four services, one team. Every job starts with a free site visit and a written quote.",
+    "included": "What is included",
+    "cta": "Ask about this service"
+  },
+  "projectsPage": {
+    "title": "Our projects",
+    "intro": "Sample projects to show the kind of work we do. All projects on this demo site are fictional.",
+    "filterLabel": "Show projects for",
+    "all": "All"
+  },
+  "about": {
+    "title": "About Kestrel",
+    "intro": "A small team of installers who like tidy cables and happy customers.",
+    "storyTitle": "Our story",
+    "story": [
+      "Kestrel started in 2016 when two network engineers began fitting cameras for friends and neighbours in New Cairo.",
+      "Today we plan and install CCTV, smart home, network and sound systems for homes and small businesses, and we still answer the phone ourselves."
+    ],
+    "numbersTitle": "Kestrel in numbers",
+    "numbers": [
+      {
+        "value": "350+",
+        "label": "installations"
+      },
+      {
+        "value": "9",
+        "label": "years of experience"
+      },
+      {
+        "value": "24 h",
+        "label": "average reply time"
+      }
+    ],
+    "numbersNote": "Sample numbers for this demo site.",
+    "processTitle": "How we work",
+    "steps": [
+      {
+        "title": "Call or message",
+        "text": "Tell us what you need. We reply within one working day."
+      },
+      {
+        "title": "Free site visit",
+        "text": "We visit, check the place and listen to what matters to you."
+      },
+      {
+        "title": "Written quote",
+        "text": "You get a clear price and plan before any work starts."
+      },
+      {
+        "title": "Install and hand over",
+        "text": "We install, test everything with you and show you the app."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact us",
+    "intro": "Tell us what you need and we will call you to book a free site visit.",
+    "demoNote": "Demo site. Please do not enter real personal details.",
+    "name": "Your name",
+    "phone": "Phone number",
+    "email": "Email",
+    "optional": "(optional)",
+    "service": "Service",
+    "servicePlaceholder": "Choose a service",
+    "serviceOther": "Something else",
+    "message": "How can we help?",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "successTitle": "Thank you!",
+    "successText": "We received your request and will call you within one working day.",
+    "sendAnother": "Send another request",
+    "errors": {
+      "name": "Enter your name (2 to 80 letters).",
+      "phone": "Enter a phone number with 8 to 15 digits.",
+      "email": "Enter a valid email address, or leave it empty.",
+      "service": "Choose a service.",
+      "message": "Write at least 10 characters (up to 1000).",
+      "tooMany": "Too many requests. Please try again in a few minutes.",
+      "general": "Something went wrong. Please try again, or contact us on WhatsApp.",
+      "summary": "Please fix the fields marked below."
+    },
+    "whatsapp": "Chat on WhatsApp",
+    "whatsappText": "Hello Kestrel, I would like to ask about a site visit.",
+    "detailsTitle": "Other ways to reach us",
+    "mapLabel": "Map placeholder: our area"
+  }
+}
