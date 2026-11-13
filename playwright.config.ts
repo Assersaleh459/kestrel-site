@@ -29,7 +29,7 @@ export default defineConfig({
     command: "npm run build && npx next start -p 3020",
     url: "http://localhost:3020/en",
     reuseExistingServer: true,
-    timeout: 300_000, // slow disk: the build takes a minute or two
+    timeout: 600_000, // slow disk: the build can take 4 to 5 minutes
     // Tests never touch Neon: an empty DATABASE_URL makes leads go to data/leads.json.
     env: { ADMIN_PASSWORD: TEST_ADMIN_PASSWORD, DATABASE_URL: "" },
   },
