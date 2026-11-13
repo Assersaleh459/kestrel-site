@@ -15,9 +15,9 @@ export const site: SiteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
 
   // Phone as people should dial it, e.g. "+20 100 000 0000". Empty = hidden.
-  phone: "",
+  phone: "+20 100 000 0000", // fictional demo number
   // WhatsApp number: digits only with country code, no "+" or spaces, e.g. "201000000000". Empty = button hidden.
-  whatsapp: "",
+  whatsapp: "201000000000", // fictional demo number
   // .example is a reserved test domain, so this address can never reach a real person.
   email: "hello@kestrel.example",
   address: {
