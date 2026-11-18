@@ -1,22 +1,46 @@
 @import "tailwindcss";
 
 /* Brand colours. Every colour on the site comes from this block, so a client can
-   re-brand by editing these values only.
-   Contrast checked (WCAG AA): ink and muted text on page/soft >= 6:1,
-   amber on charcoal and charcoal on amber about 8:1.
-   Rule: never put amber text on the light background (it fails contrast). */
+   re-brand by editing these values only. Dark theme = the second block (follows the
+   visitor's phone or computer setting).
+   Contrast checked (WCAG AA, 4.5:1 for text, 3:1 for borders and focus rings), light and dark:
+   ink, muted and accent-text on page/surface/soft; white and accent on the dark bands;
+   on-accent on accent; danger on danger-soft.
+   Rules: the blue accent is for the main button, links and ONE highlight band.
+   Text on a blue background is always charcoal (on-accent). Blue text on the page
+   uses accent-text, never the raw accent (the raw blue fails on light backgrounds). */
 :root {
-  color-scheme: light;
-  --dark: #1c1f24; /* charcoal: header, hero, footer */
-  --dark-soft: #2a2e35; /* image placeholders on dark */
-  --accent: #f5a623; /* amber: buttons and highlights on charcoal */
-  --accent-hover: #ffbb45;
-  --page: #faf8f4; /* off-white page background */
-  --surface: #ffffff; /* cards */
-  --soft: #f1ece3; /* alternate section background */
+  color-scheme: light dark;
+  --dark: #1c1f24; /* charcoal: header, hero, footer (stays dark in both themes) */
+  --dark-soft: #2a2e35; /* panels on the dark bands */
+  --accent: #5b9bff; /* blue: buttons, highlight band, accent on dark bands */
+  --accent-hover: #7cb0ff;
+  --on-accent: #1c1f24; /* text on a blue background */
+  --accent-text: #1f5ed8; /* blue text and links on the page background */
+  --page: #f6f7f9; /* page background */
+  --surface: #ffffff; /* cards and fields */
+  --soft: #eceef2; /* alternate section background */
   --ink: #1c1f24; /* main text */
-  --muted: #4d535c; /* secondary text */
-  --line: #e2dcd1; /* card borders */
+  --muted: #4b525c; /* secondary text */
+  --line: #dde1e7; /* dividers and card borders */
+  --danger: #b42318; /* error text */
+  --danger-soft: #fdecea; /* error background */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark: #0e1013;
+    --dark-soft: #1d2127;
+    --accent-text: #8ab8ff;
+    --page: #14171b;
+    --surface: #1c2025;
+    --soft: #191c21;
+    --ink: #eef0f3;
+    --muted: #a4acb8;
+    --line: #2c323a;
+    --danger: #ff9c92;
+    --danger-soft: #3a1d1b;
+  }
 }
 
 @theme inline {
@@ -25,12 +49,20 @@
   --color-dark-soft: var(--dark-soft);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-accent-text: var(--accent-text);
   --color-page: var(--page);
   --color-surface: var(--surface);
   --color-soft: var(--soft);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+}
+
+html {
+  scroll-padding-top: 1.5rem;
 }
 
 /* Arabic letters need a little more line height to stay readable. */
@@ -41,11 +73,33 @@
   line-height: 1.4;
 }
 
-/* Keyboard focus ring: charcoal on light areas, amber on charcoal areas (both >= 3:1). */
+/* Headings break into even lines instead of leaving one word alone. */
+:is(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Keyboard focus ring: ink on the page, blue on the dark bands, charcoal on the blue band (all >= 3:1). */
 :focus-visible {
   outline: 3px solid var(--ink);
   outline-offset: 2px;
 }
 .bg-dark :focus-visible {
   outline-color: var(--accent);
+}
+.bg-accent :focus-visible {
+  outline-color: var(--dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

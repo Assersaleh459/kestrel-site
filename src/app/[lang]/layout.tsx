@@ -27,7 +27,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const viewport: Viewport = { themeColor: "#1c1f24" };
+// Browser bar colour = the dark header (same values as --dark in globals.css; CSS variables cannot be used here).
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#1c1f24" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e1013" },
+  ],
+};
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const locale = await getLocale();

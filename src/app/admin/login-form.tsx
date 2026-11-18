@@ -23,11 +23,11 @@ export function LoginForm() {
         className="w-full rounded-xl border border-muted bg-surface px-3.5 py-3 text-base text-ink focus:border-ink"
       />
       {state.error && (
-        <p role="alert" className="mt-3 rounded-xl bg-red-50 px-4 py-2.5 text-sm font-medium text-red-800">{state.error}</p>
+        <p role="alert" className="mt-3 rounded-xl bg-danger-soft px-4 py-2.5 text-sm font-medium text-danger">{state.error}</p>
       )}
       <button
         disabled={pending}
-        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-dark px-4 py-3 font-semibold text-white hover:bg-dark-soft disabled:opacity-70"
+        className="mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-accent px-4 py-3 font-semibold text-on-accent hover:bg-accent-hover disabled:opacity-70"
       >
         {pending ? "Checking…" : "Log in"}
       </button>

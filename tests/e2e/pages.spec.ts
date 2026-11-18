@@ -61,3 +61,50 @@ test("sitemap and robots", async ({ request }) => {
   const robots = await (await request.get("/robots.txt")).text();
   expect(robots).toContain("Disallow: /admin");
 });
+
+test("demo switch: no tel: link, no number in the WhatsApp link, no Vyra credit", async ({ page }) => {
+  for (const lang of ["en", "ar"]) {
+    for (const slug of slugs) {
+      await page.goto(`/${lang}${slug}`);
+      await expect(page.locator('a[href^="tel:"]')).toHaveCount(0);
+      for (const href of await page.locator('a[href*="wa.me"]').evaluateAll((els) => els.map((e) => e.getAttribute("href") ?? ""))) {
+        expect(href).toMatch(/^https:\/\/wa\.me\/\?text=/);
+      }
+      await expect(page.getByText("Vyra")).toHaveCount(0);
+    }
+  }
+});
+
+test("phone menu: closes after a tap and on Esc; current page is marked", async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 800 });
+  await page.goto("/en");
+  const menu = page.locator("header details");
+  await menu.locator("summary").click();
+  await expect(menu).toHaveAttribute("open", "");
+  await page.keyboard.press("Escape");
+  await expect(menu).not.toHaveAttribute("open", "");
+
+  await menu.locator("summary").click();
+  await expect(menu.getByRole("link", { name: "Home" })).toHaveAttribute("aria-current", "page");
+  await menu.getByRole("link", { name: "Services" }).click();
+  await expect(page).toHaveURL(/\/en\/services$/);
+  await expect(menu).not.toHaveAttribute("open", "");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Our services");
+});
+
+test("home page follows the approved outline", async ({ page }) => {
+  await page.goto("/en");
+  await expect(page.locator("main").getByRole("heading", { level: 2 })).toHaveText([
+    "What we install",
+    "How it works",
+    "Sample projects",
+    "Where we work",
+    "Questions before you call",
+    "Ready to make your place safer?",
+  ]);
+  await expect(page.getByText("Sample", { exact: true })).toHaveCount(3);
+  await expect(page.locator("main details")).toHaveCount(3);
+  // Invented numbers are gone from About.
+  await page.goto("/en/about");
+  await expect(page.getByText("350+")).toHaveCount(0);
+});

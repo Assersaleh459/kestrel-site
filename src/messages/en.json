@@ -28,10 +28,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Smart home and security installers",
-      "title": "See, control and protect your home from one phone",
-      "text": "We plan, install and support CCTV, smart home and network systems for homes, villas and small businesses across Greater Cairo.",
-      "primary": "Get a free site visit",
+      "title": "CCTV, smart home and Wi‑Fi, installed in homes and shops across Greater Cairo",
+      "text": "Free site visit, written quote, clean installation. We plan, install and support every system ourselves.",
+      "primary": "Book a free site visit",
       "secondary": "See our services"
     },
     "services": {
@@ -39,36 +38,54 @@
       "intro": "One team for cameras, smart devices and the network they run on.",
       "more": "All services"
     },
-    "why": {
-      "title": "Why customers choose Kestrel",
-      "items": [
+    "how": {
+      "title": "How it works",
+      "intro": "Four steps, and you know the price before any work starts.",
+      "steps": [
         {
           "title": "Free site visit",
-          "text": "We visit, measure and give you a written quote before any work starts."
+          "text": "We visit, measure and listen to what matters to you. No charge."
+        },
+        {
+          "title": "Written quote",
+          "text": "A clear price and plan on paper before any work starts."
         },
         {
           "title": "Clean installation",
           "text": "Hidden cables, labelled equipment and a tidy site when we leave."
         },
         {
-          "title": "You stay in control",
-          "text": "We set everything up on your phone and show you how to use it."
-        },
-        {
-          "title": "Support after install",
-          "text": "One year of free support visits and a clear warranty on every job."
+          "title": "Handover and support",
+          "text": "We set it up on your phone, show you how to use it, and give you one year of free support visits."
         }
       ]
     },
     "projects": {
-      "title": "Recent projects",
+      "title": "Sample projects",
       "intro": "A few examples of our work. All projects on this demo site are fictional.",
       "more": "All projects"
+    },
+    "faq": {
+      "title": "Questions before you call",
+      "items": [
+        {
+          "q": "Is the site visit really free?",
+          "a": "Yes. We visit, measure and give you a written quote. You pay only if you decide to go ahead."
+        },
+        {
+          "q": "Do the cameras need the internet?",
+          "a": "Cameras record to the recorder in your home even if the internet is down. You need the internet only to watch from your phone when you are away."
+        },
+        {
+          "q": "Can I add more devices later?",
+          "a": "Yes. We plan every system so you can add cameras, lights or speakers later without starting again."
+        }
+      ]
     },
     "cta": {
       "title": "Ready to make your place safer?",
       "text": "Tell us what you need and we will call you to book a free visit.",
-      "button": "Contact us"
+      "button": "Book a free site visit"
     }
   },
   "services": {
@@ -169,8 +186,7 @@
     "tagline": "Smart home and security installers in Egypt.",
     "contactTitle": "Contact",
     "pagesTitle": "Pages",
-    "demo": "Fictional demo company. All names, projects and details are made up.",
-    "builtBy": "Website by"
+    "demo": "Fictional demo company. All names, projects and details are made up."
   },
   "notFound": {
     "title": "Page not found",
@@ -197,22 +213,6 @@
       "Kestrel started in 2016 when two network engineers began fitting cameras for friends and neighbours in New Cairo.",
       "Today we plan and install CCTV, smart home, network and sound systems for homes and small businesses, and we still answer the phone ourselves."
     ],
-    "numbersTitle": "Kestrel in numbers",
-    "numbers": [
-      {
-        "value": "350+",
-        "label": "installations"
-      },
-      {
-        "value": "9",
-        "label": "years of experience"
-      },
-      {
-        "value": "24 h",
-        "label": "average reply time"
-      }
-    ],
-    "numbersNote": "Sample numbers for this demo site.",
     "processTitle": "How we work",
     "steps": [
       {
@@ -262,7 +262,32 @@
     },
     "whatsapp": "Chat on WhatsApp",
     "whatsappText": "Hello Kestrel, I would like to ask about a site visit.",
-    "detailsTitle": "Other ways to reach us",
-    "mapLabel": "Map placeholder: our area"
+    "detailsTitle": "Other ways to reach us"
+  },
+  "common": {
+    "sample": "Sample"
+  },
+  "area": {
+    "title": "Where we work",
+    "text": "We install across Greater Cairo. Not sure we cover your street? Ask when you contact us.",
+    "places": [
+      "New Cairo",
+      "Zamalek",
+      "Heliopolis",
+      "Maadi",
+      "6th of October",
+      "Sheikh Zayed"
+    ],
+    "replyTitle": "Reply time",
+    "reply": "We reply to every request within one working day.",
+    "replyNote": "Sample policy for this demo site."
+  },
+  "photoAlt": {
+    "hero": "A technician mounting a security camera on a villa wall",
+    "villa-new-cairo": "Outdoor security cameras on a villa in New Cairo",
+    "cctv": "A technician checking a CCTV recorder",
+    "smart-home": "A phone controlling lights in a living room",
+    "networking": "A tidy network cabinet with labelled cables",
+    "sound": "Ceiling speakers in a cafe"
   }
 }

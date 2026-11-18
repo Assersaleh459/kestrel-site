@@ -21,6 +21,8 @@ export default async function ProjectsPage() {
           projects={t.projects.items}
           services={t.services.items.map(({ id, title }) => ({ id, title }))}
           labels={{ filter: p.filterLabel, all: p.all }}
+          sample={t.common.sample}
+          photoAlt={t.photoAlt}
         />
       </div>
     </>

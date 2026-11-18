@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type FocusEvent, type FormEvent } from "react";
+import { buttonPrimary } from "@/components/ui";
 import { LIMITS, validateContact, type ContactErrors, type ContactField } from "@/lib/contact";
 
 type Texts = {
@@ -12,7 +13,7 @@ type Texts = {
 type Props = { lang: "en" | "ar"; t: Texts; services: { id: string; title: string }[] };
 
 const input =
-  "mt-2 block w-full rounded-xl border border-muted bg-surface px-4 py-3 text-base text-ink aria-invalid:border-red-700 aria-invalid:ring-1 aria-invalid:ring-red-700";
+  "mt-2 block w-full rounded-xl border border-muted bg-surface px-4 py-3 text-base text-ink aria-invalid:border-danger aria-invalid:ring-1 aria-invalid:ring-danger";
 
 export function ContactForm({ lang, t, services }: Props) {
   const [errors, setErrors] = useState<ContactErrors>({});
@@ -67,7 +68,7 @@ export function ContactForm({ lang, t, services }: Props) {
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-6 min-h-11 rounded-full border border-dark px-5 font-semibold hover:bg-soft"
+          className="mt-6 min-h-11 rounded-full border border-ink px-5 font-semibold hover:bg-soft"
         >
           {t.sendAnother}
         </button>
@@ -81,10 +82,18 @@ export function ContactForm({ lang, t, services }: Props) {
     "aria-invalid": errors[name] ? true : undefined,
     "aria-describedby": errors[name] ? `${name}-error` : undefined,
     onChange: () => errors[name] && setErrors((prev) => ({ ...prev, [name]: undefined })),
+    // Check a field when the visitor leaves it (only if they typed something; empty fields wait for Send).
+    onBlur: (e: FocusEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      const form = e.currentTarget.form;
+      if (!e.currentTarget.value.trim() || !form) return;
+      const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+      const check = validateContact({ ...data, lang });
+      if (!check.ok && check.errors[name]) setErrors((prev) => ({ ...prev, [name]: check.errors[name] }));
+    },
   });
   const errorText = (name: ContactField) =>
     errors[name] && (
-      <p id={`${name}-error`} className="mt-2 font-medium text-red-800">
+      <p id={`${name}-error`} className="mt-2 font-medium text-danger">
         {t.errors[name]}
       </p>
     );
@@ -92,14 +101,14 @@ export function ContactForm({ lang, t, services }: Props) {
   return (
     <form ref={formRef} onSubmit={onSubmit} noValidate className="space-y-5 rounded-2xl border border-line bg-surface p-6 sm:p-8">
       {formError && (
-        <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 font-medium text-red-800">
+        <p role="alert" className="rounded-xl bg-danger-soft px-4 py-3 font-medium text-danger">
           {formError}
         </p>
       )}
 
       <div>
         <label htmlFor="name" className="font-semibold">{t.name}</label>
-        <input {...field("name")} type="text" autoComplete="name" maxLength={LIMITS.nameMax} className={input} />
+        <input {...field("name")} type="text" dir="auto" autoComplete="name" enterKeyHint="next" maxLength={LIMITS.nameMax} className={input} />
         {errorText("name")}
       </div>
 
@@ -107,14 +116,14 @@ export function ContactForm({ lang, t, services }: Props) {
         <div>
           <label htmlFor="phone" className="font-semibold">{t.phone}</label>
           {/* Phone numbers are typed left to right, also on the Arabic page. */}
-          <input {...field("phone")} type="tel" dir="ltr" autoComplete="tel" inputMode="tel" maxLength={22} className={`${input} rtl:text-right`} />
+          <input {...field("phone")} type="tel" dir="ltr" autoComplete="tel" inputMode="tel" enterKeyHint="next" maxLength={22} className={`${input} rtl:text-right`} />
           {errorText("phone")}
         </div>
         <div>
           <label htmlFor="email" className="font-semibold">
             {t.email} <span className="font-normal text-muted">{t.optional}</span>
           </label>
-          <input {...field("email")} type="email" dir="ltr" autoComplete="email" maxLength={LIMITS.emailMax} className={`${input} rtl:text-right`} />
+          <input {...field("email")} type="email" dir="ltr" autoComplete="email" enterKeyHint="next" maxLength={LIMITS.emailMax} className={`${input} rtl:text-right`} />
           {errorText("email")}
         </div>
       </div>
@@ -133,7 +142,7 @@ export function ContactForm({ lang, t, services }: Props) {
 
       <div>
         <label htmlFor="message" className="font-semibold">{t.message}</label>
-        <textarea {...field("message")} rows={5} maxLength={LIMITS.messageMax} className={input} />
+        <textarea {...field("message")} dir="auto" rows={5} maxLength={LIMITS.messageMax} className={input} />
         {errorText("message")}
       </div>
 
@@ -146,8 +155,12 @@ export function ContactForm({ lang, t, services }: Props) {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-dark px-6 font-semibold text-white hover:bg-dark-soft disabled:opacity-70 sm:w-auto"
+        aria-busy={status === "sending"}
+        className={`${buttonPrimary} w-full disabled:cursor-wait disabled:bg-soft disabled:text-muted disabled:ring-1 disabled:ring-inset disabled:ring-line sm:w-auto`}
       >
+        {status === "sending" && (
+          <span aria-hidden className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+        )}
         {status === "sending" ? t.sending : t.submit}
       </button>
     </form>

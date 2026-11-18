@@ -38,16 +38,17 @@ Edit `src/config/site.ts`:
 
 | Setting | Example | Note |
 |---|---|---|
+| `demo` | `true` | While `true`, the phone is plain text (no tap-to-call) and the WhatsApp button opens WhatsApp with no number. Set `false` for a real client |
 | `phone` | `"+20 100 000 0000"` | Empty = hidden |
-| `whatsapp` | `"201000000000"` | Digits only, with country code. Empty = WhatsApp button hidden |
+| `whatsapp` | `"201000000000"` | Digits only, with country code. Used only when `demo` is `false` |
 | `email` | `"hello@yourcompany.com"` | |
 | `address` | `en` and `ar` text | |
-| `builtBy` | name and link in the footer | Empty link = plain text |
 
 ## Change the colours or font
 
-- Colours: the block at the top of `src/app/globals.css` (`--dark`, `--accent`, `--page` and the others). Every colour on the site comes from there. Keep the contrast rule written there: no amber text on the light background.
+- Colours: the block at the top of `src/app/globals.css` (`--dark`, `--accent`, `--page` and the others). Every colour on the site comes from there. The dark theme is the second block (it follows the visitor's device setting). Keep the contrast rule written there: blue text on the page uses `--accent-text`, never the raw blue.
 - Font: `src/app/[lang]/layout.tsx` (one Google font for both languages, loaded with `next/font`).
+- Photos: put WebP files (under 150 KB) in `public/images` and list them in `src/config/photos.ts`. Alt text is in the message files under `photoAlt`.
 - Icon in the browser tab: `src/app/icon.svg`. Link-preview image: `public/og.png` (1200 × 630).
 
 ## How the languages work

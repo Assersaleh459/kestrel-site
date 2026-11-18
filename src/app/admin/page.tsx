@@ -31,7 +31,7 @@ async function AdminContent() {
     leads = await listLeads();
   } catch (err) {
     console.error("listing leads failed", err);
-    return <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 font-medium text-red-800">Could not load leads. Check the server log.</p>;
+    return <p role="alert" className="rounded-xl bg-danger-soft px-4 py-3 font-medium text-danger">Could not load leads. Check the server log.</p>;
   }
 
   const when = (iso: string) =>

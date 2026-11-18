@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonPrimary } from "@/components/ui";
 import { getDictionary, getLocale } from "@/lib/i18n";
 
 // Shown for unknown pages under /en/... and /ar/..., in that language.
@@ -13,7 +14,7 @@ export default async function NotFound() {
       <p className="mt-3 text-lg text-muted">{t.notFound.text}</p>
       <Link
         href={`/${locale}`}
-        className="mt-8 inline-flex min-h-12 items-center rounded-full bg-accent px-6 font-semibold text-dark hover:bg-accent-hover"
+        className={`${buttonPrimary} mt-8`}
       >
         {t.notFound.button}
       </Link>
