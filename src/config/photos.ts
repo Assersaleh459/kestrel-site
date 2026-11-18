@@ -13,4 +13,7 @@ export const photos: Partial<Record<string, Photo>> = {
   "apartment-zamalek": { src: "/images/apartment-zamalek.webp", width: 1200, height: 750 },
   "clinic-heliopolis": { src: "/images/clinic-heliopolis.webp", width: 1200, height: 750 },
   "cafe-maadi": { src: "/images/cafe-maadi.webp", width: 1200, height: 750 },
+  sound: { src: "/images/sound-studio.webp", width: 1200, height: 750 },
+  "shop-6-october": { src: "/images/shop-camera.webp", width: 1200, height: 750 },
+  "office-sheikh-zayed": { src: "/images/office-patch.webp", width: 1200, height: 750 },
 };
