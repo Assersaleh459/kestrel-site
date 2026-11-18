@@ -5,5 +5,12 @@
 export type Photo = { src: string; width: number; height: number };
 
 export const photos: Partial<Record<string, Photo>> = {
-  // hero: { src: "/images/hero.webp", width: 1600, height: 900 },
+  hero: { src: "/images/hero.webp", width: 1600, height: 900 },
+  "villa-new-cairo": { src: "/images/villa-gate.webp", width: 1200, height: 750 },
+  cctv: { src: "/images/cctv.webp", width: 1200, height: 750 },
+  "smart-home": { src: "/images/smart-home.webp", width: 1200, height: 750 },
+  networking: { src: "/images/networking.webp", width: 1200, height: 750 },
+  "apartment-zamalek": { src: "/images/apartment-zamalek.webp", width: 1200, height: 750 },
+  "clinic-heliopolis": { src: "/images/clinic-heliopolis.webp", width: 1200, height: 750 },
+  "cafe-maadi": { src: "/images/cafe-maadi.webp", width: 1200, height: 750 },
 };

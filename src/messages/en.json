@@ -283,11 +283,14 @@
     "replyNote": "Sample policy for this demo site."
   },
   "photoAlt": {
-    "hero": "A technician mounting a security camera on a villa wall",
-    "villa-new-cairo": "Outdoor security cameras on a villa in New Cairo",
-    "cctv": "A technician checking a CCTV recorder",
-    "smart-home": "A phone controlling lights in a living room",
-    "networking": "A tidy network cabinet with labelled cables",
-    "sound": "Ceiling speakers in a cafe"
+    "hero": "A technician's hands mounting a security camera on a wall",
+    "villa-new-cairo": "A villa behind a walled gate on a quiet street",
+    "cctv": "A white dome security camera on a stone wall",
+    "smart-home": "A smart control button on a bedroom wall",
+    "networking": "Network cables plugged into a rack",
+    "sound": "Ceiling speakers in a cafe",
+    "apartment-zamalek": "A living room with warm evening lighting",
+    "clinic-heliopolis": "A clean clinic waiting room",
+    "cafe-maadi": "A bright cafe with plants and hanging lights"
   }
 }

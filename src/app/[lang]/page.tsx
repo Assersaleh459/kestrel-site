@@ -29,7 +29,9 @@ export default async function HomePage() {
       <section className="relative isolate overflow-hidden bg-dark text-white">
         {photos.hero && (
           <>
-            <Photo slot="hero" alt={t.photoAlt.hero} sizes="100vw" priority className="absolute inset-0 -z-10" />
+            <div className="absolute inset-0 -z-10">
+              <Photo slot="hero" alt={t.photoAlt.hero} sizes="100vw" priority className="h-full" />
+            </div>
             <div aria-hidden className="absolute inset-0 -z-10 bg-dark/75" />
           </>
         )}
